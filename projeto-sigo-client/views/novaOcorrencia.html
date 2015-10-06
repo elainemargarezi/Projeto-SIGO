@@ -1,0 +1,74 @@
+<!-- novaOcorrencia.html -->
+<div class="col-lg-12 col-sm-12">
+    <div class="card hovercard">
+        <div class="card-background">
+        </div>
+        <div class="useravatar">
+            <img alt="" src="img/agenda.png">
+        </div>
+        <div class="card-info"> <span class="card-title">Cadastro de Ocorrências</span></div>
+    </div>
+    <div class="container col-lg-12 col-sm-12">
+        <div class="row centered-form">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="alert alert-danger" ng-show="novaOcorrenciaForm.$invalid && novaOcorrenciaForm.$dirty">
+                        Por favor preencha o campo:
+                        <span ng-show="novaOcorrenciaForm.ocorrenciaData.$error.required && novaOcorrenciaForm.$dirty" class="label label-danger">*Data da ocorrência</span>
+                        <span ng-show="novaOcorrenciaForm.educadorNome.$error.required && novaOcorrenciaForm.$dirty" class="label label-danger">*Nome do educador</span>
+                        <span ng-show="novaOcorrenciaForm.mediacaoConflito.$error.required && novaOcorrenciaForm.$dirty" class="label label-danger">*Mediação de conflito</span>
+                        <span ng-show="novaOcorrenciaForm.encaminhamento.$error.required && novaOcorrenciaForm.$dirty" class="label label-danger">*Encaminhamentos</span>
+                    </div>
+                    <form name="novaOcorrenciaForm">
+                        <legend>Dados da ocorrência</legend>
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <div class="form-group ">
+                                    <input ng-model="ocorrencia.ocorrenciaData " name="ocorrenciaData" type="text" class="form-control input-sm" placeholder="Data da ocorrência. XX/XX/XXXX " mask="XX/XX/XXXX" ng-required="true">
+                                    <span class="label label-danger " ng-show="novaOcorrenciaForm.ocorrenciaData.$error.required && novaOcorrenciaForm.$dirty ">Campo obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-sm-5 col-md-5">
+                                <div class="form-group ">
+                                    <input ng-required="true" type="text" class="form-control input-sm " placeholder="*Nome do educador" ng-model="ocorrencia.educadorNome" name="educadorNome">
+                                    <span class="label label-danger " ng-show="novaOcorrenciaForm.educadorNome.$error.required && novaOcorrenciaForm.$dirty ">Campo obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                <div class="form-group ">
+                                    <input type="text" class="form-control input-sm " placeholder="Frequência do aluno %" ng-model="ocorrencia.frequencia" name="frequencia" mask="XXX">
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                <div class="form-group ">
+                                    <select ng-model="ocorrencia.ocorrenciaTurno " name="ocorrenciaTurno " class="form-control input-sm">
+                                        <option value="">Selecione o turno</option>
+                                        <option ng-value="ocorrencia.manha ">Manhã</option>
+                                        <option ng-value="ocorrencia.tarde">Tarde</option>
+                                        <option ng-value="ocorrencia.noite">Noite</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-6 col-sm-6 col-md-6 ">
+                                <div class="form-group ">
+                                    <textarea ng-model="ocorrencia.mediacaoConflito" name="mediacaoConflito" placeholder="*Mediação de conflito" class="form-control" style="resize:none" ng-required="true"></textarea>
+                                    <span class="label label-danger " ng-show="novaOcorrenciaForm.mediacaoConflito.$error.required 
+                                    && novaOcorrenciaForm.$dirty ">Campo obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group ">
+                                    <textarea ng-model="ocorrencia.encaminhamento" name="encaminhamento" placeholder="*Encaminhamentos" class="form-control" style="resize:none" ng-required="true"></textarea>
+                                    <span class="label label-danger " ng-show="novaOcorrenciaForm.encaminhamento.$error.required && novaOcorrenciaForm.$dirty ">Campo obrigatório</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-info btn-block " ng-click="" ng-disabled="novaOcorrenciaForm.$invalid ">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

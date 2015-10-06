@@ -1,0 +1,28 @@
+{
+    "name": "projeto-sigo",
+    "version": "1.0.0",
+    "description": "Projeto para gerenciamento de ocorrências escolares",
+    "main": "index.html",
+    "keywords": [
+        "sigo",
+        "escola",
+        "ocorrência"
+    ],
+    "authors": [
+        "Elaine Margarezi"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "lib/",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular-route": "~1.4.5",
+        "angular": "~1.4.5",
+        "bootstrap": "~3.3.5"
+    }
+}

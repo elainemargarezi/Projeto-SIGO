@@ -1,0 +1,171 @@
+<!-- novoAluno.html -->
+<div class="col-lg-12 col-sm-12">
+    <div class="card hovercard">
+        <div class="card-background">
+        </div>
+        <div class="useravatar">
+            <img alt="" src="img/aluno.png">
+        </div>
+        <div class="card-info"> <span class="card-title">{{title}}</span></div>
+    </div>
+    <div class="container col-lg-12 col-sm-12">
+        <div class="row centered-form">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="alert alert-danger" ng-show="novoAlunoForm.$invalid && novoAlunoForm.$dirty">
+                        Por favor preencha o campo:
+                        <span ng-show="novoAlunoForm.alunoNome.$error.required && novoAlunoForm.$dirty" class="label label-danger">*Nome do aluno</span>
+                        <span ng-show="novoAlunoForm.responsavelNome.$error.required && novoAlunoForm.$dirty" class="label label-danger">*Nome do responsavel</span>
+                    </div>
+                    <form name="novoAlunoForm">
+                        <legend>Aluno</legend>
+                        <div class=" row ">
+                            <div class="col-xs-4 col-sm-4 col-md-4 ">
+                                <div class="form-group ">
+                                    <input ng-required="true " type="text " class="form-control input-sm " placeholder="*Nome do aluno " ng-model="alunos.alunoNome " name="alunoNome">
+                                    <span class="label label-danger " ng-show="novoAlunoForm.alunoNome.$error.required && novoAlunoForm.$dirty ">Campo obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.alunoMatricula " name="alunoMatricula " type="text " class="form-control input-sm " placeholder="Matricula ">
+                                </div>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.alunoTurma " name="alunoTurma " type="text " class="form-control input-sm " placeholder="Turma ">
+                                </div>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.alunoSerie " name="alunoSerie " type="text " class="form-control input-sm " placeholder="Série ">
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.alunoDataNasc " name="alunoDataNasc " type="text " class="form-control input-sm " placeholder="Data de n. XX/XX/XXXX " mask="XX/XX/XXXX ">
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                <div class="form-group ">
+                                    <select ng-model="alunos.alunoSexo " name="alunoSexo " class="form-control input-sm">
+                                        <option value="">Selecione o sexo</option>
+                                        <option ng-value="alunos.alunoSexo ">Masculino</option>
+                                        <option ng-value="alunos.alunoSexo">Feminino</option>
+                                        <option ng-value="alunos.alunoSexo">Indefinido</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-3 col-sm-3 col-md-3 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.alunoTelefone " name="alunoTelefone " type="text " class="form-control input-sm " placeholder="Telefone (XX) XXXX-XXXX " mask="(XX) XXXX-XXXX ">
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.alunoCelular " name="alunoCelular " type="text " class="form-control input-sm " placeholder="Celular (XX) XXXX-XXXX " mask="(XX) XXXX-XXXX ">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 ">
+                                <div class="form-group ">
+                                    <select ng-model="alunos.alunoOperadora " name="alunoOperadora " class="form-control input-sm ">
+                                        <option value="">Selecione a operadora</option>
+                                        <option ng-value="alunos.alunoOperadora">Vivo</option>
+                                        <option ng-value="alunos.alunoOperadora">Tim</option>
+                                        <option ng-value="alunos.alunoOperadora">Oi</option>
+                                        <option ng-value="alunos.alunoOperadora">Claro</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <legend>Responsável</legend>
+                        <div class="row ">
+                            <div class="col-xs-9 col-sm-9 col-md-9 ">
+                                <div class="form-group ">
+                                    <input type="text " class="form-control input-sm " placeholder="*Nome do responsável " name="responsavelNome " ng-model="alunos.responsavelNome " name="responsavelNome " ng-required="true ">
+                                    <span class="label label-danger " ng-show="novoAlunoForm.responsavelNome.$error.required && novoAlunoForm.$dirty ">Campo obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.responsavelCpf " name="responsavelCpf " type="text " class="form-control input-sm " placeholder="CPF XXX.XXX.XXX-XX " mask="XXX.XXX.XXX-XX ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.responsavelTelefone " name="responsavelTelefone " type="text " class="form-control input-sm " placeholder="Tel (XX) XXXX-XXXX " mask="(XX) XXXX-XXXX ">
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.responsavelCelular " name="responsavelCelular " type="text " class="form-control input-sm " placeholder="Celular (XX) XXXX-XXXX " mask="(XX) XXXX-XXXX ">
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 ">
+                                <div class="form-group ">
+                                    <select ng-model="alunos.responsavelOperadora" name="responsavelOperadora " class="form-control input-sm ">
+                                        <option value="">Selecione a operadora</option>
+                                        <option ng-value="alunos.responsavelOperadora">Vivo</option>
+                                        <option ng-value="alunos.responsavelOperadora">Tim</option>
+                                        <option ng-value="alunos.responsavelOperadora">Oi</option>
+                                        <option ng-value="alunos.responsavelOperadora">Claro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.responsavelEmail " name="responsavelEmail " type="text " class="form-control input-sm " placeholder="Email ">
+                                </div>
+                            </div>
+                        </div>
+                        <legend>Endereço</legend>
+                        <div class="row ">
+                            <div class="col-xs-3 col-sm-3 col-md-3 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.enderecoRua " name="enderecoRua " type="text " class="form-control input-sm " placeholder="Rua, Av, Praça... ">
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.enderecoBairro " name="enderecoBairro " type="text " class="form-control input-sm " placeholder="Bairro ">
+                                </div>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.enderecoNumero " name="enderecoNumero " type="text " class="form-control input-sm " placeholder="Nº " mask="XXXXX ">
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.enderecoComplemento " name="enderecoComplemento " type="text " class="form-control input-sm " placeholder="Complemento ">
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.enderecoCep " name="enderecoCep " type="text " class="form-control input-sm " placeholder="CEP XXXXX-XXX " mask="XXXXX-XXX ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-10 col-sm-10 col-md-10 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.enderecoCidade " name="enderecoCidade " type="text " class="form-control input-sm " placeholder="Cidade ">
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                <div class="form-group ">
+                                    <input ng-model="alunos.enderecoUf " name="enderecoUf " type="text " class="form-control input-sm " placeholder="UF ">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-info btn-block " ng-click="adicionarAluno(alunos) || editarAluno(alunos)" ng-disabled="novoAlunoForm.$invalid ">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

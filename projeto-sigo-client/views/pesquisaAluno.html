@@ -1,0 +1,61 @@
+<!-- pesquisaAluno.html -->
+<div class="card hovercard">
+    <div class="card-background">
+    </div>
+    <div class="useravatar">
+        <img alt="" src="img/aluno.png">
+    </div>
+    <div class="card-info"> <span class="card-title">Pesquisar Alunos</span></div>
+</div>
+<div class="container col-lg-12 col-sm-12">
+    <div class="row centered-form">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                        <input type="text" name="" value="" placeholder="Pesquisar aluno" class="form-control input-sm" ng-model="criterioDeBusca">
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <button type="button" class="btn btn-default text-uppercase btn-sm" ng-if="isAlunoSelecionado(alunos)">Nova ocorrência</button>
+                        <a type="button" class="btn btn-success text-uppercase btn-sm" href="#/novoAluno">Novo aluno</a>
+                        <button type="button" class="btn btn-danger text-uppercase btn-sm" ng-click="deletarAlunos(alunos)" ng-if="isAlunoSelecionado(alunos)">Remover</button>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped input-sm" ng-show="alunos.length > 0">
+                    <thead>
+                        <tr>
+                            <th><a href="" ng-click="ordenarPor('idAluno')">ID</a></th>
+                            <th><a href="" ng-click="ordenarPor('alunoNome')">Nome do Aluno</a></th>
+                            <th><a href="" ng-click="ordenarPor('matricula')">Matricula</a></th>
+                            <th><a href="" ng-click="ordenarPor('turma')">Turma</a></th>
+                            <th><a href="" ng-click="ordenarPor('serie')">Série</a></th>
+                            <th><a href="" ng-click="ordenarPor('responsavelNome')">Nome do Responsável</a></th>
+                            <th><a href="" ng-click="ordenarPor('responsavelTelefone')">Telefone</a></th>
+                            <th><a href="" ng-click="ordenarPor('responsavelCelular')">Celular</a></th>
+                            <th><a href="" ng-click="ordenarPor('responsavelOperadora')">Operadora</a></th>
+                            <th><a href="" ng-click="ordenarPor('responsavelEmail')">Email</a></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-class="{'negrito':aluno.selecionado}" ng-repeat="aluno in alunos | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
+                            <td>{{aluno.idAluno}}</td>
+                            <td><a href="#/novoAluno/{{aluno.idAluno}}">{{aluno.alunoNome}}</a></td>
+                            <td>{{aluno.matricula}}</td>
+                            <td>{{aluno.turma}}</td>
+                            <td>{{aluno.serie}}</td>
+                            <td>{{aluno.responsavelNome}}</td>
+                            <td>{{aluno.responsavelTelefone}}</td>
+                            <td>{{aluno.responsavelCelular}}</td>
+                            <td>{{aluno.responsavelOperadora}}</td>
+                            <td>{{aluno.responsavelEmail}}</td>
+                            <td>
+                                <input type="checkbox" name="" value="" ng-model="aluno.selecionado">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
